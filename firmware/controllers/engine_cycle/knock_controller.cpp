@@ -57,7 +57,7 @@ bool KnockControllerBase::onKnockSenseCompleted(uint8_t cylinderNumber, float db
 		auto baseTiming = engine->cylinders[cylinderNumber].getIgnitionTimingBtdc();
 
 		// TODO: 20 configurable? Better explanation why 20?
-		auto distToMinimum = baseTiming - (-20);
+		auto distToMinimum = baseTiming - m_knockRetard - (-20);
 
 		// percent -> ratio = divide by 100
 		auto retardFraction = engineConfiguration->knockRetardAggression * 0.01f;

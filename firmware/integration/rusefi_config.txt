@@ -578,7 +578,7 @@ end_struct
 	float manIdlePosition;Base idle valve position, 0 to 100%. This is typically set to provide an idle speed slightly above the target RPM when the engine is fully warmed up.;"%", 1, 0, 0, 100, 0
 
 uint8_t autoscale knockRetardAggression;Ignition timing to remove when a knock event occurs. Advice: 5% (mild), 10% (turbo/high comp.), 15% (high knock, e.g. GDI), 20% (spicy lump),;"%", 0.1, 0, 0, 20, 1
-uint8_t autoscale knockRetardReapplyRate;After a knock event, reapply timing at this rate.;"deg/s", 0.1, 0, 0, 10, 1
+uint8_t autoscale knockRetardReapplyRate;After a knock event, reapply timing at this rate. Value is a % of the retard, a good value is 30 to 50%.;"deg/s", 0.1, 0, 0, 70, 1
 
 #define engineSyncCam_enum "Intake First Bank", "Exhaust First Bank", "Intake Second Bank", "Exhaust Second Bank"
 custom engineSyncCam_e 1 bits, S08, @OFFSET@, [0:1], @@engineSyncCam_enum@@
