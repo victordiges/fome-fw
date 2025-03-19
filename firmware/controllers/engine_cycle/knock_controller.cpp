@@ -88,7 +88,7 @@ void KnockControllerBase::onFastCallback() {
 
 	constexpr auto callbackPeriodSeconds = FAST_CALLBACK_PERIOD_MS / 1000.0f;
 
-	auto applyAmount = engineConfiguration->knockRetardReapplyRate * callbackPeriodSeconds;
+	auto applyAmount = engineConfiguration->knockRetardReapplyRate * engineConfiguration->knockRetardAggression * 0.01f;
 
 	{
 		// Adjust knock retard under lock
